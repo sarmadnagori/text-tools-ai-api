@@ -31,7 +31,7 @@ def get_summary(summarize:write):
     prompt= f"Summarize this:\n\n{summarize.text}"
 
     reply = ask_model(prompt)
-    return reply
+    return {"reply":reply}
 
 
 @app.post("/translate")
@@ -40,7 +40,7 @@ def get_translate(translate:write):
     prompt= f"Translate this in Urdu language:\n\n{translate.text}"
 
     reply = ask_model(prompt)
-    return reply
+    return {"reply":reply}
 
 @app.post("/explain")
 
@@ -48,4 +48,4 @@ def get_explain(explain:write):
     prompt= f"Explain in simple:\n\n{explain.text}"
 
     reply = ask_model(prompt)
-    return reply
+    return {"reply":reply}
